@@ -1,6 +1,7 @@
 var FormView = {
 
   $form: $('form'),
+  $inputMessage: $('#message'),
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
@@ -9,13 +10,12 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
+    Messages.post(DOMPurify.sanitize(FormView.$inputMessage.val()));
+    FormView.$inputMessage.val('');
 
-    Messages.post(sanitize($('#message').val()));
     // sanitize --> return sanitized object here
     // let sanitize = function() { ... };
     // package up the input in {username, text, roomname} and send to messages.js
-
-    console.log(message);
 
     // clear text input
   },

@@ -13,6 +13,7 @@ var MessagesView = {
     // loop through all messages
     //   possibly filter on room here?
     //   call messageView
+    MessagesView.$chats.empty();
     messages.forEach(m => MessagesView.$chats.append(DOMPurify.sanitize(MessageView.render(m))));
   }
 

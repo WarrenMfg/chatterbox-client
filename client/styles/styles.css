@@ -52,7 +52,8 @@ body {
   grid-template-columns: 1fr 2fr;
   grid-template-areas:
   "chatterbox form"
-  "chatterbox rooms";
+  "chatterbox roomSelect"
+  "chatterbox addRooms";
 }
 
 #main #h1 {
@@ -126,23 +127,29 @@ form input[type="submit"]:hover {
 
 /* ADD ROOMS */
 
-#rooms {
+#room-select {
   margin-top: 22px;
-  grid-area: rooms;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-areas: "select button";
-}
-
-#rooms select {
-  grid-area: select;
-  width: 284px;
+  grid-area: roomSelect;
+  width: 100%;
   height: 30px;
 }
 
-#rooms button {
-  grid-area: button;
+#addRoomDiv {
+  margin-top: 22px;
+  grid-area: addRooms;
+}
+
+#main input[type="text"] {
+  float: left;
+  height: 30px;
+  width: 280px;
+}
+
+button {
+  float: right;
   background-color: #eee;
+  height: 30px;
+  width: 100px;
   border: none;
 
 }
@@ -151,12 +158,6 @@ form input[type="submit"]:hover {
   background-color: #ddd;
 }
 
-#rooms input[type="text"] {
-  display: none;
-  grid-area: select;
-  width: 284px;
-  height: 30px;
-}
 
 
 /* POSTS */
