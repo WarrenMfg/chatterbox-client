@@ -28,16 +28,17 @@
 
       <div id="h1">CHAT<br>TER<br>BOX</div>
       <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
+        <textarea required name="message" id="message"></textarea>
+        <input type="submit" name="submit" class="submit" value="CHAT"/>
       </form>
 
       <div id="rooms">
-        Room:
+        <input type="text" name="room" id="room-input">
         <select>
+          <option>SELECT A ROOM</option>
           <!-- populate options elements with rooms from server data, not AJAX data -->
         </select>
-        <button>Add Room</button>
+        <button>ADD ROOM</button>
       </div>
 
     </div>
