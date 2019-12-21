@@ -9,7 +9,9 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
+    // package up the input in {username, text, roomname}
+    // calls setter in Messages
+
     console.log('click!');
   },
 
