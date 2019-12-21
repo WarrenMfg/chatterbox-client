@@ -23,11 +23,11 @@ var Messages = {
   },
 
   post: function(inputMessage) {
-    let obj = {
-      username: App.username,
-      text: inputMessage,
-      roomname: // retrieve roomname from Rooms.roomname
-    };
+    // let obj = {
+    //   username: App.username,
+    //   text: inputMessage,
+    //   roomname: // retrieve roomname from Rooms.roomname
+    // };
   }
 
 };

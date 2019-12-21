@@ -13,7 +13,7 @@ var MessagesView = {
     // loop through all messages
     //   possibly filter on room here?
     //   call messageView
-
+    console.log(messages);
     messages.forEach(m => MessagesView.$chats.append(MessageView.render(m)));
   }
 

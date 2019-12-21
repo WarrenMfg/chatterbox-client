@@ -22,9 +22,16 @@
     </script>
   </head>
   <body>
+
+    <div class="spinner"><img src="client/images/103.gif"></div>
     <div id="main">
-      <h1>chatterbox</h1>
-      <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
+
+      <div id="h1">CHAT<br>TER<br>BOX</div>
+      <form action="#" id="send" method="post">
+        <input type="text" name="message" id="message"/>
+        <input type="submit" name="submit" class="submit"/>
+      </form>
+
       <div id="rooms">
         Room:
         <select>
@@ -32,11 +39,10 @@
         </select>
         <button>Add Room</button>
       </div>
-      <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
-      </form>
+
     </div>
+
+
     <div id="chats"></div>
     <script src="client/env/config.js"></script>
     <script src="client/scripts/parse.js"></script>
