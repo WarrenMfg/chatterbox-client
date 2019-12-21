@@ -9,10 +9,15 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    // package up the input in {username, text, roomname}
-    // calls setter in Messages
 
-    console.log('click!');
+    Messages.post(sanitize($('#message').val()));
+    // sanitize --> return sanitized object here
+    // let sanitize = function() { ... };
+    // package up the input in {username, text, roomname} and send to messages.js
+
+    console.log(message);
+
+    // clear text input
   },
 
   setStatus: function(active) {

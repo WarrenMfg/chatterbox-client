@@ -20,7 +20,9 @@ var Messages = {
     });
 
     MessagesView.render(_storage.results);
-  }
+  },
+
+  post
 
 };
 
