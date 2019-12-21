@@ -4,7 +4,11 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    // get room names??
+    Parse.readRoomNames((data) => {
+      // examine the response from the server request:
+      console.log(data);
+    });
+
   },
 
   render: function() {
