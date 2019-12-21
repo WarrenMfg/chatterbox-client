@@ -6,7 +6,7 @@ var RoomsView = {
   initialize: function() {
     Parse.readRoomNames((data) => {
       // examine the response from the server request:
-      // console.log('keys: "roomname"', data);
+      console.log('keys: "roomname"', data);
     });
 
   },
