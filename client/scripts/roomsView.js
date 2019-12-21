@@ -31,12 +31,6 @@ var RoomsView = {
     Rooms.changeRoom(RoomsView.$newRoomValue.val());
     RoomsView.$newRoomValue.val('');
   },
-
-  render: function() {
-    // filter by specific room
-    // post to messagesView
-  }
-
 };
 
 // use class to create room, then subclass for new room

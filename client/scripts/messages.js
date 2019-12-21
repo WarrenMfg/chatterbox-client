@@ -1,6 +1,6 @@
 var Messages = {
 
-  _storage: {},
+  _storage: {messages: []},
   _friends: {},
 
   load: function(data) { // object
