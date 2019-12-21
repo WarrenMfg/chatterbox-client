@@ -177,6 +177,10 @@ button {
   overflow-wrap: break-word;
 }
 
+.username span {
+  cursor: pointer;
+}
+
 .text {
   overflow-wrap: break-word;
 }
@@ -185,7 +189,8 @@ button {
 /* FRIEND */
 
 .friend {
-  color: #fff;
-  background-color: #0090da;
+  /* color: #fff;
+  background-color: #0090da; */
+  color: #0090da;
 }
 

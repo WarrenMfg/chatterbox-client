@@ -1,6 +1,7 @@
 var Messages = {
 
   _storage: {},
+  _friends: {},
 
   load: function(data) { // object
     Messages._storage = {};
@@ -27,7 +28,7 @@ var Messages = {
   show: function(roomname = '') {
     MessagesView.render(Messages._storage.messages.filter(m => {
       return roomname === '' || roomname === 'SELECT A ROOM' || m.roomname === roomname;
-    }));
+    }), Messages._friends);
   },
 
   post: function(inputMessage) {
@@ -37,19 +38,19 @@ var Messages = {
       roomname: Rooms.roomname
     };
 
-    // Parse.create(message);
-    console.log(Messages._storage);
+    Parse.create(message);
+
     Messages._storage.messages.unshift(message);
+    Messages.show(Rooms.roomname);
+  },
+
+  toggleFriend: function(username) {
+    if (Messages._friends[username]) {
+      delete Messages._friends[username];
+    } else {
+      Messages._friends[username] = true;
+    }
     Messages.show(Rooms.roomname);
   }
 
 };
-
-
-
-// var message = {
-//   username: 'shawndrost',
-//   text: 'trololo',
-//   roomname: '4chan'
-//   createdAt: ...
-// };

@@ -3,18 +3,22 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    // register MessageView as wanting updates from Messages???
-    // Messages.registerMeForUpdates(MessageView.render);
+    MessagesView.$chats.on('click', '.username', MessagesView.toggleFriend);
   },
 
-  render: function(messages) {
-    // who calls render? It's a callback given to Messages?
-
-    // loop through all messages
-    //   possibly filter on room here?
-    //   call messageView
+  render: function(messages, friends) {
     MessagesView.$chats.empty();
-    messages.forEach(m => MessagesView.$chats.append(DOMPurify.sanitize(MessageView.render(m))));
+    messages.forEach(m => {
+      if (friends[m.username]) {
+        MessagesView.$chats.append(DOMPurify.sanitize(MessageView.renderFriend(m)));
+      } else {
+        MessagesView.$chats.append(DOMPurify.sanitize(MessageView.renderNonfriend(m)));
+      }
+    });
+  },
+
+  toggleFriend: function(event) {
+    Messages.toggleFriend($(event.target).text());
   }
 
 };

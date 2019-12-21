@@ -12,12 +12,6 @@ var FormView = {
     event.preventDefault();
     Messages.post(DOMPurify.sanitize(FormView.$inputMessage.val()));
     FormView.$inputMessage.val('');
-
-    // sanitize --> return sanitized object here
-    // let sanitize = function() { ... };
-    // package up the input in {username, text, roomname} and send to messages.js
-
-    // clear text input
   },
 
   setStatus: function(active) {

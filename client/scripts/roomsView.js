@@ -13,7 +13,7 @@ var RoomsView = {
   load: function(roomnames, roomname = 'SELECT A ROOM') {
     let html = '';
     for (k in roomnames) {
-      html += '<option value="' + k + '">' + k + '</option>'
+      html += '<option value="' + k + '">' + k + '</option>';
     }
 
     RoomsView.$select.empty();
@@ -27,6 +27,7 @@ var RoomsView = {
   },
 
   addRoom: function(event) {
+    // if not empty string, do this
     Rooms.changeRoom(RoomsView.$newRoomValue.val());
     RoomsView.$newRoomValue.val('');
   },
