@@ -4,11 +4,14 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
-    Parse.readRoomNames((data) => {
-      // examine the response from the server request:
-      console.log('keys: "roomname"', data);
-    });
+  },
 
+  load: function(roomnames) {
+    let html = roomnames.reduce((html, roomname) => {
+      return html += '<option value="' + roomname + '">' + roomname + '</option>'
+    }, '');
+
+    RoomsView.$select.append(DOMPurify.sanitize(html));
   },
 
   render: function() {

@@ -15,11 +15,25 @@ var Messages = {
     //data.results is an array of objects
 
     _storage = data;
-    _storage.results = _storage.results.filter(function(message) {
-      return message.username && message.text && message.roomname && message.createdAt;
+    _storage.roomNames = {};
+
+    _storage.results = _storage.results.map(function(message) {
+      // return message.username && message.roomname && message.createdAt;
+      if (!message.username) {
+        message.username = 'NA';
+      }
+      if (!message.roomname) {
+        message.roomname = 'NA';
+      }
+      if (!message.text) {
+        message.text = 'NA';
+      }
+      _storage.roomNames[message.roomname] = true;
+      return message;
     });
 
     MessagesView.render(_storage.results);
+    Rooms.load(_storage.roomNames);
   },
 
   post: function(inputMessage) {
