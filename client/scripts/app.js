@@ -19,12 +19,15 @@ var App = {
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
       Messages.load(data);
-//how do we send the data over to Message class, who is supposed to keep it for everyone else
-// possibly invoke function to send data to messages.js storage // graph data structure for rooms and friends
       callback();
     });
+
+    setInterval(function() {
+      Parse.readAll((data) => {
+        Messages.load(data);
+      });
+    }, 60000);
   },
 
   startSpinner: function() {
