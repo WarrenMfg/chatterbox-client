@@ -1,8 +1,11 @@
 /* COLOR */
-/* :root {
-  --blue: var(...);
-  --red...
-} */
+:root {
+  --white: #F2F2F2;
+  --lightBlue: #D5EAF2;
+  --mediumBlue: #3F8EBF;
+  --darkBlue: #034C8C;
+  --friendBlue: #0A3EA6;
+}
 
 
 /* GLOBAL */
@@ -26,7 +29,7 @@ body {
 
 .spinner {
   position: absolute;
-  top: 50vh;
+  top: 75vh;
   left: 50vw;
   transform: translate(-50%, -50%);
   height: 46px;
@@ -65,7 +68,6 @@ body {
 
 #main #h1 {
   margin: auto;
-  /* margin-right: 80px; */
   text-align: center;
   letter-spacing: 20px;
   line-height: 60px;
@@ -73,26 +75,11 @@ body {
   font-weight: 900;
   grid-area: chatterbox;
   transition: all 0.2s ease;
+  color: var(--friendBlue);
 }
 
 #main #h1 span {
   display: block;
-}
-
-#main .error {
-  border: 1px solid red;
-  background: #FDEFF0;
-  padding: 20px;
-}
-
-#main .success {
-  margin-top: 25px;
-}
-
-#main .success code {
-  font-size: 12px;
-  color: green;
-  line-height: 13px;
 }
 
 
@@ -113,14 +100,15 @@ form textarea { /* form input[type="text"] */
   font-size: 16px;
   padding: 5px;
   resize: none;
-  border: 2px solid #ddd;
+  border: 2px solid var(--mediumBlue);
 }
 
 
 form input[type="submit"] {
   float: right;
   border: none;
-  background-color: #eee;
+  background-color: var(--friendBlue);
+  color: var(--white);
   padding: 20px;
   height: 100%;
   width: 100px;
@@ -129,9 +117,9 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-  background-color: #ddd;
   cursor: pointer;
-  box-shadow: 0 0 10px black;
+  transform: scale(1.2);
+  border-radius: 15px;
 }
 
 
@@ -154,22 +142,23 @@ form input[type="submit"]:hover {
   float: left;
   height: 30px;
   width: 70%;
-  border: 2px solid #ddd;
+  border: 2px solid var(--mediumBlue);
 }
 
 button {
   float: right;
-  background-color: #eee;
+  background-color: var(--friendBlue);
+  color: var(--white);
   height: 30px;
   width: 100px;
   border: none;
-  cursor: pointer;
   transition: all 0.2s ease;
 }
 
 button:hover {
-  background-color: #ddd;
-  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  transform: scale(1.2);
+  border-radius: 5px;
 }
 
 
@@ -179,13 +168,13 @@ button:hover {
 .postDiv {
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #eee;
+  background-color: rgb(248,248,248);
   transition: all 0.2s ease;
 }
 
 .postDiv:hover {
-  background-color: #ddd;
-  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  background-color: var(--lightBlue);
 }
 
 .username {
@@ -207,9 +196,7 @@ button:hover {
 /* FRIEND */
 
 .friend {
-  /* color: #fff;
-  background-color: #0090da; */
-  color: #0090da;
+  color: var(--friendBlue);
 }
 
 
